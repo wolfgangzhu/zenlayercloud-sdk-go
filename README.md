@@ -73,7 +73,8 @@ SDK有默认的超时时间，如非必要请不要修改默认设置。 如有�
     conf.Timeout = 30
 ```
 
-你可以设置环境变量 `DEBUG=on`开启调试模式，调试模式会打印更详细的日志，当您需要进行详细的排查错误时可以开启。默认调试模式为关闭。 你也可以设置配置 config.Debug = Bool(true)  来进行开启，如下所示：
+你可以设置环境变量 `DEBUG=on`开启调试模式，调试模式会打印更详细的日志(包括请求和响应数据），当您需要进行详细的排查错误时可以开启。默认调试模式为关闭。 你也可以设置配置 config.Debug = Bool(true)
+来进行开启，如下所示：
 
 默认为 `false`
 
@@ -96,16 +97,16 @@ import (
 )
 
 func main() {
-	// 全局开启重试，并设置重试次数为3次
+	// Open retry for all api invocation and set up retry for 3 times
 	config := common.NewConfig()
 	config.AutoRetry = true
 	config.MaxRetryTime = 3
 
-	// 配置接口重试
 	client, _ := bmc.NewClient(config, os.Getenv("ZENLAYERCLOUD_SECRET_KEY_ID"), os.Getenv("ZENLAYERCLOUD_SECRET_KEY_PASSWORD"))
 	request := bmc.NewDescribeInstanceTypesRequest()
-	request.SetAutoRetries(true) // 如果不设置true，则依旧使用全局的配置
-	request.SetMaxAttempts(2)    // 覆盖全局的配置3次
+	// Specify retry config for DescribeInstanceTypes
+	request.SetAutoRetries(true) // if autoretries not set to true，the retry config will inherent client config
+	request.SetMaxAttempts(2)    // specify retry times to 2 replace the client config 3
 	response, err = client.DescribeInstanceTypes(request)
 }
 
