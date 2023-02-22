@@ -1,32 +1,35 @@
-Quick Start[(English)](./README.md)
+快速开始[(中文)](./README-CN.md)
 
----
+--- 
 
-# 介绍
+# Introduction
 
-欢迎使用Zenlayer Cloud 开发者工具SDK，SDK是云 Zenlayer API 平台v2版本的配套工具。目前已经支持bmc等产品，后续所有的云服务产品都会接入进来。 为方便 GO 开发者调试和接入 Zenlayer Cloud
-产品 API，提供了一些使用SDK的简单示例。让您快速上手调试 GO SDK。
+Welcome to Zenlayer Cloud API Software Developer Kit (SDK). SDK is a supporting tool for Zenlayer Cloud API. It
+currently supports Bare Metal Instance, Elastic IP, DDoS Protected IP and other products. More cloud services will be
+supported for SDK.
 
-# 依赖环境
+# Requirements
 
-1. Go 环境版本必须不低于 1.9 版本以上
-2. 使用 Zenlayer Cloud SDK Go, 您需要在云平台拥有一个云账号，并在 Zenlayer 云平台控制台中的创建和查看您的 Access Key ID 和 Access Key
-   Password。如何获取详见 [帮助文档](https://docs.console.zenlayer.com/welcome/platform/team-management/generate-an-api-access-key)
+1. You must use Go 1.9.x or later.
+2. A Zenlayer Cloud account is created and an Access Key ID and an Access Key Password are created.
+   See [Generate an API Access Key](https://docs.console.zenlayer.com/welcome/platform/team-management/generate-an-api-access-key)
+   for more details.
 
-# 安装
+# Installation
 
-使用 go get 下载安装 SDK
+If you use Maven to manage Java projects, you can add Maven dependencies to the pom.xml file to install Zenlayer Cloud
+SDK for Java. In the Maven repository, you can view the Maven dependencies of Zenlayer Cloud services. Add the following
+Maven dependency to install the core library of Zenlayer Cloud SDK for Java.
+
+Use go get to install SDK：
 
 ```shell
 $ go get -u github.com/zenlayer/zenlayercloud-sdk-go
 ```
 
-# 快速使用
+# Quick Examples
 
-每个接口都有一个对应的 Request 结构和一个 Response 结构，且请求参数均通过NewXXXRequest进行构造。 例如查询实例列表接口 DescribeInstances 有对应的请求结构体
-DescribeInstancesRequest 和 返回结构体 DescribeInstancesResponse，构造的请求参数方法为bmc.NewDescribeInstancesRequest()
-
-以BMC服务产品下查询实例接口DescribeInstances为例：
+Take DescribeInstances as an example.
 
 ```go
 package main
@@ -52,26 +55,23 @@ func main() {
 }
 ```
 
-# 更多配置
+# Quick Examples
 
-在创建客户端前，如有需要，common.NewConfig 中字段的值进行一些配置。
+Before creating client, if needed, you can specify some other configuration by setting `common.NewConfig`
 
 ```go
-    // 实例化一个客户端配置对象，可以指定超时时间等配置 
 conf := common.NewConfig()
 ```
 
-具体的配置项说明如下：
+The configurations are as follows:
 
-## 超时时间
+## Request Timeout
 
-SDK有默认的超时时间，如非必要请不要修改默认设置。 如有需要请在代码中查阅以获取最新的默认值。 单位：秒
+SDK有默认的超时时间，如非必要请不要修改默认设置。 如有需要请在代码中查阅以获取最新的默认值。 Unit：second
 
 ```go
     conf.Timeout = 30
 ```
-
-## 调试
 
 你可以设置环境变量 `DEBUG=on`开启调试模式，调试模式会打印更详细的日志，当您需要进行详细的排查错误时可以开启。默认调试模式为关闭。 你也可以设置配置 config.Debug = Bool(true)  来进行开启，如下所示：
 
@@ -112,4 +112,4 @@ func main() {
 ```
 
 ---
-Quick Start[(English)](./README.md)
+快速开始[(中文)](./README-CN.md)

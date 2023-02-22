@@ -39,8 +39,8 @@ func (c *Client) InitWithCredential(credential *Credential) (err error) {
 	return
 }
 
-func (c *Client) WithConfig(config *Config)  error {
-	
+func (c *Client) WithConfig(config *Config) error {
+
 	c.httpClient = &http.Client{}
 	c.logger = log.New(os.Stderr, "", log.LstdFlags|log.Lshortfile)
 	c.config = config
@@ -73,7 +73,7 @@ func (c *Client) WithConfig(config *Config)  error {
 			c.logger.Println("setting proxy while httpClient.Transport is not a http.Transport is not supported")
 		}
 	}
-	
+
 	return nil
 }
 

@@ -1,24 +1,21 @@
 package main
 
 import (
+	"fmt"
 	bmc "github.com/zenlayer/zenlayercloud-sdk-go/zenlayercloud/bmc20221120"
 	"github.com/zenlayer/zenlayercloud-sdk-go/zenlayercloud/common"
+	"os"
 )
 
-var t = "0"
-
 func main() {
-	config := common.NewConfig()
-	config.Domain = "10.89.0.11:32070"
-	config.Scheme = "HTTP"
-	config.Debug = common.Bool(true)
-
-	client, _ := bmc.NewClient(config, "DSxK5RRbouf1jQ2k", "n16ZznQw8Z3XFJcN00PDV7E6gFd4WG")
+	client, _ := bmc.NewClientWithSecretKey(os.Getenv("ZENLAYERCLOUD_SECRET_KEY_ID"), os.Getenv("ZENLAYERCLOUD_SECRET_KEY_PASSWORD"))
 	request := bmc.NewDescribeInstancesRequest()
-	request.PageSize = 2
+	request.PageSize = 1
 	request.PageNum = 100
-	//request.InstanceIds = []string{"812649911051886092"}
-
-	_, _ = client.DescribeInstances(request)
-	print(t)
+	response, err := client.DescribeInstances(request)
+	if _, ok := err.(*common.ZenlayerCloudSdkError); ok {
+		fmt.Printf("An API error has returned: %s", err)
+		return
+	}
+	fmt.Printf("%v\n", response)
 }
