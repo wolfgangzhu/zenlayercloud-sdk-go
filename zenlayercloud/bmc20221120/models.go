@@ -353,7 +353,7 @@ type ModifyInstancesAttributeRequest struct {
 	InstanceName string   `json:"instanceName,omitempty"`
 }
 
-type ModifyInstanceAttributeResponse struct {
+type ModifyInstancesAttributeResponse struct {
 	*common.BaseResponse
 	RequestId string `json:"requestId,omitempty"`
 	Response  struct {

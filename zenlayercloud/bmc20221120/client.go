@@ -327,15 +327,15 @@ func NewModifyInstancesAttributeRequest() (request *ModifyInstancesAttributeRequ
 	return
 }
 
-func NewModifyInstanceAttributeResponse() (response *ModifyInstanceAttributeResponse) {
-	response = &ModifyInstanceAttributeResponse{
+func NewModifyInstancesAttributeResponse() (response *ModifyInstancesAttributeResponse) {
+	response = &ModifyInstancesAttributeResponse{
 		BaseResponse: &common.BaseResponse{},
 	}
 	return
 }
 
-func (c *Client) ModifyInstancesAttribute(request *ModifyInstancesAttributeRequest) (response *ModifyInstanceAttributeResponse, err error) {
-	response = NewModifyInstanceAttributeResponse()
+func (c *Client) ModifyInstancesAttribute(request *ModifyInstancesAttributeRequest) (response *ModifyInstancesAttributeResponse, err error) {
+	response = NewModifyInstancesAttributeResponse()
 	err = c.ApiCall(request, response)
 	return
 }

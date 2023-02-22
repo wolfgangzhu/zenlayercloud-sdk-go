@@ -68,7 +68,7 @@ conf := common.NewConfig()
 SDK有默认的超时时间，如非必要请不要修改默认设置。 如有需要请在代码中查阅以获取最新的默认值。 单位：秒
 
 ```go
-    conf.Timeout = 30
+conf.Timeout = 30
 ```
 
 ## 调试
@@ -79,7 +79,7 @@ SDK有默认的超时时间，如非必要请不要修改默认设置。 如有�
 默认为 `false`
 
 ```go
-    conf.Debug = Bool(true)
+conf.Debug = Bool(true)
 ```
 
 ## 请求重试

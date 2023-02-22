@@ -67,23 +67,28 @@ The configurations are as follows:
 
 ## Request Timeout
 
-The Zenlayer Cloud SDK for GO has default request timeout, and please do not modify the default value if necessary. You can check the latest default timeout value in the code. Unit: second. For example, the current default timeout value is 30 seconds.
+The Zenlayer Cloud SDK for GO has default request timeout, and please do not modify the default value if necessary. You
+can check the latest default timeout value in the code. Unit: second. For example, the current default timeout value is
+30 seconds.
 
 ```go
-    conf.Timeout = 30
+conf.Timeout = 30
 ```
 
-You can set `DEBUG=on` to enable the debug mode. The debug mode will print more detailed logs (including request and response data), which can be enabled when you need to troubleshoot errors in detail. By default, the debug mode is disabled. You can also set config.Debug = Bool(true) to enable the debug mode as follows: 
+You can set `DEBUG=on` to enable the debug mode. The debug mode will print more detailed logs (including request and
+response data), which can be enabled when you need to troubleshoot errors in detail. By default, the debug mode is
+disabled. You can also set config.Debug = Bool(true) to enable the debug mode as follows:
 
 Default value: `false`
 
 ```go
-    conf.Debug = Bool(true)
+conf.Debug = Bool(true)
 ```
 
 ## Request Retries
 
-If a request fails due to network error, it may be desirable to retry the request. By default, the request retries are disabled.  
+If a request fails due to network error, it may be desirable to retry the request. By default, the request retries are
+disabled.  
 You can enable request reties on all API interfaces or just on a specified one.
 
 ```go
