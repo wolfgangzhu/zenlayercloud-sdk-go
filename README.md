@@ -67,25 +67,24 @@ The configurations are as follows:
 
 ## Request Timeout
 
-SDK有默认的超时时间，如非必要请不要修改默认设置。 如有需要请在代码中查阅以获取最新的默认值。 Unit：second
+The Zenlayer Cloud SDK for GO has default request timeout, and please do not modify the default value if necessary. You can check the latest default timeout value in the code. Unit: second. For example, the current default timeout value is 30 seconds.
 
 ```go
     conf.Timeout = 30
 ```
 
-你可以设置环境变量 `DEBUG=on`开启调试模式，调试模式会打印更详细的日志(包括请求和响应数据），当您需要进行详细的排查错误时可以开启。默认调试模式为关闭。 你也可以设置配置 config.Debug = Bool(true)
-来进行开启，如下所示：
+You can set `DEBUG=on` to enable the debug mode. The debug mode will print more detailed logs (including request and response data), which can be enabled when you need to troubleshoot errors in detail. By default, the debug mode is disabled. You can also set config.Debug = Bool(true) to enable the debug mode as follows: 
 
-默认为 `false`
+Default value: `false`
 
 ```go
     conf.Debug = Bool(true)
 ```
 
-## 请求重试
+## Request Retries
 
-当调用发生网络错误时，可以配置重试发起API的重试，默认重试为关闭的。  
-您可以全局开启重试，也可以只对某一个接口请求设置重试
+If a request fails due to network error, it may be desirable to retry the request. By default, the request retries are disabled.  
+You can enable request reties on all API interfaces or just on a specified one.
 
 ```go
 package main
