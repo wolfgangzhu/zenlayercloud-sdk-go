@@ -17,10 +17,6 @@ supported for SDK.
 
 # Installation
 
-If you use Maven to manage Java projects, you can add Maven dependencies to the pom.xml file to install Zenlayer Cloud
-SDK for Java. In the Maven repository, you can view the Maven dependencies of Zenlayer Cloud services. Add the following
-Maven dependency to install the core library of Zenlayer Cloud SDK for Java.
-
 Use go get to install SDK：
 
 ```shell
