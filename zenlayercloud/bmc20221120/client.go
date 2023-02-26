@@ -428,24 +428,68 @@ func (c *Client) ModifyInstanceBandwidth(request *ModifyInstanceBandwidthRequest
 	return
 }
 
-func NewModifyInstanceTrafficPackageSizeRequest() (request *ModifyInstanceTrafficPackageSizeRequest) {
-	request = &ModifyInstanceTrafficPackageSizeRequest{
+func NewCancelInstanceBandwidthDowngradeRequest() (request *CancelInstanceBandwidthDowngradeRequest) {
+	request = &CancelInstanceBandwidthDowngradeRequest{
 		BaseRequest: &common.BaseRequest{},
 	}
-	request.Init().InitWithApiInfo(SERVICE, APIVersion, "ModifyInstanceTrafficPackageSize")
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "CancelInstanceBandwidthDowngrade")
 
 	return
 }
 
-func NewModifyInstanceTrafficPackageSizeResponse() (response *ModifyInstanceTrafficPackageSizeResponse) {
-	response = &ModifyInstanceTrafficPackageSizeResponse{
+func NewCancelInstanceBandwidthDowngradeResponse() (response *CancelInstanceBandwidthDowngradeResponse) {
+	response = &CancelInstanceBandwidthDowngradeResponse{
 		BaseResponse: &common.BaseResponse{},
 	}
 	return
 }
 
-func (c *Client) ModifyInstanceTrafficPackageSize(request *ModifyInstanceTrafficPackageSizeRequest) (response *ModifyInstanceTrafficPackageSizeResponse, err error) {
-	response = NewModifyInstanceTrafficPackageSizeResponse()
+func (c *Client) CancelInstanceBandwidthDowngrade(request *CancelInstanceBandwidthDowngradeRequest) (response *CancelInstanceBandwidthDowngradeResponse, err error) {
+	response = NewCancelInstanceBandwidthDowngradeResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
+func NewModifyInstanceTrafficPackageRequest() (request *ModifyInstanceTrafficPackageRequest) {
+	request = &ModifyInstanceTrafficPackageRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "ModifyInstanceTrafficPackage")
+
+	return
+}
+
+func NewModifyInstanceTrafficPackageResponse() (response *ModifyInstanceTrafficPackageResponse) {
+	response = &ModifyInstanceTrafficPackageResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) ModifyInstanceTrafficPackage(request *ModifyInstanceTrafficPackageRequest) (response *ModifyInstanceTrafficPackageResponse, err error) {
+	response = NewModifyInstanceTrafficPackageResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
+func NewCancelInstanceTrafficPackageDowngradeRequest() (request *CancelInstanceTrafficPackageDowngradeRequest) {
+	request = &CancelInstanceTrafficPackageDowngradeRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "CancelInstanceBandwidthDowngrade")
+
+	return
+}
+
+func NewCancelInstanceTrafficPackageDowngradeResponse() (response *CancelInstanceTrafficPackageDowngradeResponse) {
+	response = &CancelInstanceTrafficPackageDowngradeResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) CancelInstanceTrafficPackageDowngrade(request *CancelInstanceTrafficPackageDowngradeRequest) (response *CancelInstanceTrafficPackageDowngradeResponse, err error) {
+	response = NewCancelInstanceTrafficPackageDowngradeResponse()
 	err = c.ApiCall(request, response)
 	return
 }
@@ -496,6 +540,28 @@ func (c *Client) DescribeEipAddresses(request *DescribeEipAddressesRequest) (res
 	return
 }
 
+func NewDescribeEipAvailableResourcesRequest() (request *DescribeEipAvailableResourcesRequest) {
+	request = &DescribeEipAvailableResourcesRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "DescribeEipAvailableResources")
+
+	return
+}
+
+func NewDescribeEipAvailableResourcesResponse() (response *DescribeEipAvailableResourcesResponse) {
+	response = &DescribeEipAvailableResourcesResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) DescribeEipAvailableResources(request *DescribeEipAvailableResourcesRequest) (response *DescribeEipAvailableResourcesResponse, err error) {
+	response = NewDescribeEipAvailableResourcesResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
 func NewTerminateEipAddressRequest() (request *TerminateEipAddressRequest) {
 	request = &TerminateEipAddressRequest{
 		BaseRequest: &common.BaseRequest{},
@@ -536,6 +602,28 @@ func NewReleaseEipAddressesResponse() (response *ReleaseEipAddressesResponse) {
 
 func (c *Client) ReleaseEipAddresses(request *ReleaseEipAddressesRequest) (response *ReleaseEipAddressesResponse, err error) {
 	response = NewReleaseEipAddressesResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
+func NewRenewEipAddressRequest() (request *RenewEipAddressRequest) {
+	request = &RenewEipAddressRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "RenewEipAddress")
+
+	return
+}
+
+func NewRenewEipAddressResponse() (response *RenewEipAddressResponse) {
+	response = &RenewEipAddressResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) RenewEipAddress(request *RenewEipAddressRequest) (response *RenewEipAddressResponse, err error) {
+	response = NewRenewEipAddressResponse()
 	err = c.ApiCall(request, response)
 	return
 }
@@ -584,6 +672,28 @@ func (c *Client) UnassociateEipAddress(request *UnassociateEipAddressRequest) (r
 	return
 }
 
+func NewInquiryPriceCreateEipAddressRequest() (request *InquiryPriceCreateEipAddressRequest) {
+	request = &InquiryPriceCreateEipAddressRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "InquiryPriceCreateEipAddress")
+
+	return
+}
+
+func NewInquiryPriceCreateEipAddressResponse() (response *InquiryPriceCreateEipAddressResponse) {
+	response = &InquiryPriceCreateEipAddressResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) InquiryPriceCreateEipAddress(request *InquiryPriceCreateEipAddressRequest) (response *InquiryPriceCreateEipAddressResponse, err error) {
+	response = NewInquiryPriceCreateEipAddressResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
 func NewModifyEipAddressesResourceGroupRequest() (request *ModifyEipAddressesResourceGroupRequest) {
 	request = &ModifyEipAddressesResourceGroupRequest{
 		BaseRequest: &common.BaseRequest{},
@@ -607,6 +717,29 @@ func (c *Client) ModifyEipAddressesResourceGroup(request *ModifyEipAddressesReso
 }
 
 //////////////////////////// DDoS IP //////////////////////////////
+
+func NewDescribeDdosAvailableResourcesRequest() (request *DescribeDdosIpAvailableResourcesRequest) {
+	request = &DescribeDdosIpAvailableResourcesRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "DescribeDdosIpAvailableResources")
+
+	return
+}
+
+func NewDescribeDdosAvailableResourcesResponse() (response *DescribeDdosIpAvailableResourcesResponse) {
+	response = &DescribeDdosIpAvailableResourcesResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) DescribeDdosAvailableResources(request *DescribeDdosIpAvailableResourcesRequest) (response *DescribeDdosIpAvailableResourcesResponse, err error) {
+	response = NewDescribeDdosAvailableResourcesResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
 func NewAllocateDdosIpAddressesRequest() (request *AllocateDdosIpAddressesRequest) {
 	request = &AllocateDdosIpAddressesRequest{
 		BaseRequest: &common.BaseRequest{},
@@ -691,6 +824,94 @@ func NewReleaseDdosIPAddressesResponse() (response *ReleaseDdosIPAddressesRespon
 
 func (c *Client) ReleaseDdosIPAddresses(request *ReleaseDdosIPAddressesRequest) (response *ReleaseDdosIPAddressesResponse, err error) {
 	response = NewReleaseDdosIPAddressesResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
+func NewRenewDdosIpAddressRequest() (request *RenewDdosIpAddressRequest) {
+	request = &RenewDdosIpAddressRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "RenewDdosIpAddress")
+
+	return
+}
+
+func NewRenewDdosIpAddressResponse() (response *RenewDdosIpAddressResponse) {
+	response = &RenewDdosIpAddressResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) RenewDdosIpAddress(request *RenewDdosIpAddressRequest) (response *RenewDdosIpAddressResponse, err error) {
+	response = NewRenewDdosIpAddressResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
+func NewAssociateDdosIpAddressRequest() (request *AssociateDdosIpAddressRequest) {
+	request = &AssociateDdosIpAddressRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "AssociateDdosIpAddress")
+
+	return
+}
+
+func NewAssociateDdosIpAddressResponse() (response *AssociateDdosIpAddressResponse) {
+	response = &AssociateDdosIpAddressResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) AssociateDdosIpAddress(request *AssociateDdosIpAddressRequest) (response *AssociateDdosIpAddressResponse, err error) {
+	response = NewAssociateDdosIpAddressResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
+func NewUnassociateDdosIpAddressRequest() (request *UnassociateDdosIpAddressRequest) {
+	request = &UnassociateDdosIpAddressRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "UnAssociateDdosIpAddress")
+
+	return
+}
+
+func NewUnassociateDdosIpAddressResponse() (response *UnassociateDdosIpAddressResponse) {
+	response = &UnassociateDdosIpAddressResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) UnassociateDdosIpAddress(request *UnassociateDdosIpAddressRequest) (response *UnassociateDdosIpAddressResponse, err error) {
+	response = NewUnassociateDdosIpAddressResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
+func NewInquiryPriceCreateDdosIpAddressRequest() (request *InquiryPriceCreateDdosIpAddressRequest) {
+	request = &InquiryPriceCreateDdosIpAddressRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "InquiryPriceCreateDdosIpAddress")
+
+	return
+}
+
+func NewInquiryPriceCreateDdosIpAddressResponse() (response *InquiryPriceCreateDdosIpAddressResponse) {
+	response = &InquiryPriceCreateDdosIpAddressResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) InquiryPriceCreateDdosIpAddress(request *InquiryPriceCreateDdosIpAddressRequest) (response *InquiryPriceCreateDdosIpAddressResponse, err error) {
+	response = NewInquiryPriceCreateDdosIpAddressResponse()
 	err = c.ApiCall(request, response)
 	return
 }
@@ -785,6 +1006,72 @@ func (c *Client) DescribeVpcs(request *DescribeVpcsRequest) (response *DescribeV
 	return
 }
 
+func NewModifyVpcsAttributeRequest() (request *ModifyVpcsAttributeRequest) {
+	request = &ModifyVpcsAttributeRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "ModifyVpcsAttribute")
+
+	return
+}
+
+func NewModifyVpcsAttributeResponse() (response *ModifyVpcsAttributeResponse) {
+	response = &ModifyVpcsAttributeResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) ModifyVpcsAttribute(request *ModifyVpcsAttributeRequest) (response *ModifyVpcsAttributeResponse, err error) {
+	response = NewModifyVpcsAttributeResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
+func NewModifyVpcsResourceGroupRequest() (request *ModifyVpcsResourceGroupRequest) {
+	request = &ModifyVpcsResourceGroupRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "ModifyVpcsResourceGroup")
+
+	return
+}
+
+func NewModifyVpcsResourceGroupResponse() (response *ModifyVpcsResourceGroupResponse) {
+	response = &ModifyVpcsResourceGroupResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) ModifyVpcsResourceGroup(request *ModifyVpcsResourceGroupRequest) (response *ModifyVpcsResourceGroupResponse, err error) {
+	response = NewModifyVpcsResourceGroupResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
+func NewDeleteVpcRequest() (request *DeleteVpcRequest) {
+	request = &DeleteVpcRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "DeleteVpc")
+
+	return
+}
+
+func NewDeleteVpcResponse() (response *DeleteVpcResponse) {
+	response = &DeleteVpcResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) DeleteVpc(request *DeleteVpcRequest) (response *DeleteVpcResponse, err error) {
+	response = NewDeleteVpcResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
 func NewCreateSubnetRequest() (request *CreateSubnetRequest) {
 	request = &CreateSubnetRequest{
 		BaseRequest: &common.BaseRequest{},
@@ -869,6 +1156,28 @@ func NewModifySubnetsAttributeResponse() (response *ModifySubnetsAttributeRespon
 
 func (c *Client) ModifySubnetsAttribute(request *ModifySubnetsAttributeRequest) (response *ModifySubnetsAttributeResponse, err error) {
 	response = NewModifySubnetsAttributeResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
+func NewModifySubnetsResourceGroupRequest() (request *ModifySubnetsResourceGroupRequest) {
+	request = &ModifySubnetsResourceGroupRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "ModifySubnetsResourceGroup")
+
+	return
+}
+
+func NewModifySubnetsResourceGroupResponse() (response *ModifySubnetsResourceGroupResponse) {
+	response = &ModifySubnetsResourceGroupResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) ModifySubnetsResourceGroup(request *ModifySubnetsResourceGroupRequest) (response *ModifySubnetsResourceGroupResponse, err error) {
+	response = NewModifySubnetsResourceGroupResponse()
 	err = c.ApiCall(request, response)
 	return
 }

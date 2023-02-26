@@ -409,16 +409,16 @@ type InquiryPriceCreateInstanceRequest struct {
 	InternetChargeType      string         `json:"internetChargeType,omitempty"`
 }
 
-type InquiryPriceCreateInstanceResponseParams struct {
-	RequestId      string   `json:"requestId,omitempty"`
-	InstancePrice  *Price   `json:"instancePrice,omitempty"`
-	BandwidthPrice []*Price `json:"bandwidthPrice,omitempty"`
-}
-
 type InquiryPriceCreateInstanceResponse struct {
 	*common.BaseResponse
 	RequestId string                                    `json:"requestId,omitempty"`
 	Response  *InquiryPriceCreateInstanceResponseParams `json:"response"`
+}
+
+type InquiryPriceCreateInstanceResponseParams struct {
+	RequestId      string   `json:"requestId,omitempty"`
+	InstancePrice  *Price   `json:"instancePrice,omitempty"`
+	BandwidthPrice []*Price `json:"bandwidthPrice,omitempty"`
 }
 
 type Price struct {
@@ -444,18 +444,31 @@ type ModifyInstanceBandwidthRequest struct {
 	BandwidthOutMbps *int   `json:"bandwidthOutMbps,omitempty"`
 }
 
-type ModifyInstanceBandwidthResponseParams struct {
-	RequestId   string `json:"requestId,omitempty"`
-	OrderNumber string `json:"orderNumber,omitempty"`
-}
-
 type ModifyInstanceBandwidthResponse struct {
 	*common.BaseResponse
 	RequestId string                                 `json:"requestId,omitempty"`
 	Response  *ModifyInstanceBandwidthResponseParams `json:"response"`
 }
 
-type ModifyInstanceTrafficPackageSizeRequest struct {
+type ModifyInstanceBandwidthResponseParams struct {
+	RequestId   string `json:"requestId,omitempty"`
+	OrderNumber string `json:"orderNumber,omitempty"`
+}
+
+type CancelInstanceBandwidthDowngradeRequest struct {
+	*common.BaseRequest
+	InstanceId string `json:"instanceId,omitempty"`
+}
+
+type CancelInstanceBandwidthDowngradeResponse struct {
+	*common.BaseResponse
+	RequestId string `json:"requestId,omitempty"`
+	Response  struct {
+		RequestId string `json:"requestId,omitempty"`
+	} `json:"response"`
+}
+
+type ModifyInstanceTrafficPackageRequest struct {
 	*common.BaseRequest
 	InstanceId         string   `json:"instanceId,omitempty"`
 	TrafficPackageSize *float64 `json:"trafficPackageSize,omitempty"`
@@ -466,10 +479,23 @@ type ModifyInstanceTrafficPackageSizeResponseParams struct {
 	OrderNumber string `json:"orderNumber,omitempty"`
 }
 
-type ModifyInstanceTrafficPackageSizeResponse struct {
+type ModifyInstanceTrafficPackageResponse struct {
 	*common.BaseResponse
 	RequestId string                                          `json:"requestId,omitempty"`
 	Response  *ModifyInstanceTrafficPackageSizeResponseParams `json:"response"`
+}
+
+type CancelInstanceTrafficPackageDowngradeRequest struct {
+	*common.BaseRequest
+	InstanceId string `json:"instanceId,omitempty"`
+}
+
+type CancelInstanceTrafficPackageDowngradeResponse struct {
+	*common.BaseResponse
+	RequestId string `json:"requestId,omitempty"`
+	Response  struct {
+		RequestId string `json:"requestId,omitempty"`
+	} `json:"response"`
 }
 
 type EipAddress struct {
@@ -487,17 +513,6 @@ type EipAddress struct {
 	EipStatus         string `json:"eipStatus,omitempty"`
 }
 
-type DescribeEipAddressesResponse struct {
-	*common.BaseResponse
-	RequestId string                              `json:"requestId,omitempty"`
-	Response  *DescribeEipAddressesResponseParams `json:"response,omitempty"`
-}
-type DescribeEipAddressesResponseParams struct {
-	RequestId  string        `json:"requestId,omitempty"`
-	DataSet    []*EipAddress `json:"dataSet,omitempty"`
-	TotalCount int           `json:"totalCount,omitempty"`
-}
-
 type DescribeEipAddressesRequest struct {
 	*common.BaseRequest
 	EipIds          []string `json:"eipIds,omitempty"`
@@ -510,6 +525,36 @@ type DescribeEipAddressesRequest struct {
 	InstanceName    string   `json:"instanceName,omitempty"`
 	PageSize        int      `json:"pageSize,omitempty"`
 	PageNum         int      `json:"pageNum,omitempty"`
+}
+type DescribeEipAddressesResponse struct {
+	*common.BaseResponse
+	RequestId string                              `json:"requestId,omitempty"`
+	Response  *DescribeEipAddressesResponseParams `json:"response,omitempty"`
+}
+type DescribeEipAddressesResponseParams struct {
+	RequestId  string        `json:"requestId,omitempty"`
+	DataSet    []*EipAddress `json:"dataSet,omitempty"`
+	TotalCount int           `json:"totalCount,omitempty"`
+}
+
+type DescribeEipAvailableResourcesRequest struct {
+	*common.BaseRequest
+	EipChargeType string `json:"eipChargeType,omitempty"`
+	ZoneId        string `json:"zoneId,omitempty"`
+}
+type DescribeEipAvailableResourcesResponse struct {
+	*common.BaseResponse
+	RequestId string                                       `json:"requestId,omitempty"`
+	Response  *DescribeEipAvailableResourcesResponseParams `json:"response,omitempty"`
+}
+type DescribeEipAvailableResourcesResponseParams struct {
+	RequestId    string                  `json:"requestId,omitempty"`
+	EipResources []*EipAvailableResource `json:"eipResources,omitempty"`
+}
+
+type EipAvailableResource struct {
+	ZoneId string `json:"zoneId,omitempty"`
+	Status string `json:"status,omitempty"`
 }
 
 type AllocateEipAddressesRequest struct {
@@ -558,6 +603,19 @@ type ReleaseEipAddressesResponse struct {
 	} `json:"response"`
 }
 
+type RenewEipAddressRequest struct {
+	*common.BaseRequest
+	EipId string `json:"EipId,omitempty"`
+}
+
+type RenewEipAddressResponse struct {
+	*common.BaseResponse
+	RequestId string `json:"requestId,omitempty"`
+	Response  struct {
+		RequestId string `json:"requestId,omitempty"`
+	} `json:"response"`
+}
+
 type AssociateEipAddressRequest struct {
 	*common.BaseRequest
 	EipId      string `json:"eipId,omitempty"`
@@ -585,6 +643,26 @@ type UnassociateEipAddressResponse struct {
 	} `json:"response"`
 }
 
+type InquiryPriceCreateEipAddressRequest struct {
+	*common.BaseRequest
+	ZoneId           string         `json:"zoneId,omitempty"`
+	EipChargeType    string         `json:"eipChargeType,omitempty"`
+	EipChargePrepaid *ChargePrepaid `json:"eipChargePrepaid,omitempty"`
+	Amount           int            `json:"amount,omitempty"`
+}
+
+type InquiryPriceCreateEipAddressResponse struct {
+	*common.BaseResponse
+	RequestId string                                      `json:"requestId,omitempty"`
+	Response  *InquiryPriceCreateEipAddressResponseParams `json:"response"`
+}
+
+type InquiryPriceCreateEipAddressResponseParams struct {
+	*common.BaseResponse
+	RequestId string `json:"requestId,omitempty"`
+	EipPrice  *Price `json:"eipPrice,omitempty"`
+}
+
 type ModifyEipAddressesResourceGroupRequest struct {
 	*common.BaseRequest
 	EipIds          []string `json:"eipIds,omitempty"`
@@ -597,6 +675,26 @@ type ModifyEipAddressesResourceGroupResponse struct {
 	Response  struct {
 		RequestId string `json:"requestId,omitempty"`
 	} `json:"response"`
+}
+
+type DescribeDdosIpAvailableResourcesRequest struct {
+	*common.BaseRequest
+	DdosIpChargeType string `json:"ddosIpChargeType,omitempty"`
+	ZoneId           string `json:"zoneId,omitempty"`
+}
+type DescribeDdosIpAvailableResourcesResponse struct {
+	*common.BaseResponse
+	RequestId string                                          `json:"requestId,omitempty"`
+	Response  *DescribeDdosIpAvailableResourcesResponseParams `json:"response,omitempty"`
+}
+type DescribeDdosIpAvailableResourcesResponseParams struct {
+	RequestId       string                     `json:"requestId,omitempty"`
+	DdosIpResources []*DdosIpAvailableResource `json:"ddosIpResources,omitempty"`
+}
+
+type DdosIpAvailableResource struct {
+	ZoneId string `json:"zoneId,omitempty"`
+	Status string `json:"status,omitempty"`
 }
 
 type AllocateDdosIpAddressesRequest struct {
@@ -685,6 +783,65 @@ type ReleaseDdosIPAddressesResponse struct {
 	} `json:"response"`
 }
 
+type RenewDdosIpAddressRequest struct {
+	*common.BaseRequest
+	DdosIp string `json:"ddosIp,omitempty"`
+}
+
+type RenewDdosIpAddressResponse struct {
+	*common.BaseResponse
+	RequestId string `json:"requestId,omitempty"`
+	Response  struct {
+		RequestId string `json:"requestId,omitempty"`
+	} `json:"response"`
+}
+type AssociateDdosIpAddressRequest struct {
+	*common.BaseRequest
+	DdosIpId   string `json:"ddosIpId,omitempty"`
+	InstanceId string `json:"instanceId,omitempty"`
+}
+
+type AssociateDdosIpAddressResponse struct {
+	*common.BaseResponse
+	RequestId string `json:"requestId,omitempty"`
+	Response  struct {
+		RequestId string `json:"requestId,omitempty"`
+	} `json:"response"`
+}
+
+type UnassociateDdosIpAddressRequest struct {
+	*common.BaseRequest
+	DdosIp string `json:"ddosIp,omitempty"`
+}
+
+type UnassociateDdosIpAddressResponse struct {
+	*common.BaseResponse
+	RequestId string `json:"requestId,omitempty"`
+	Response  struct {
+		RequestId string `json:"requestId,omitempty"`
+	} `json:"response"`
+}
+
+type InquiryPriceCreateDdosIpAddressRequest struct {
+	*common.BaseRequest
+	ZoneId              string         `json:"zoneId,omitempty"`
+	DdosIpChargeType    string         `json:"DdosIpChargeType,omitempty"`
+	DdosIpChargePrepaid *ChargePrepaid `json:"ddosIpChargePrepaid,omitempty"`
+	Amount              int            `json:"amount,omitempty"`
+}
+
+type InquiryPriceCreateDdosIpAddressResponse struct {
+	*common.BaseResponse
+	RequestId string                                         `json:"requestId,omitempty"`
+	Response  *InquiryPriceCreateDdosIpAddressResponseParams `json:"response"`
+}
+
+type InquiryPriceCreateDdosIpAddressResponseParams struct {
+	*common.BaseResponse
+	RequestId   string `json:"requestId,omitempty"`
+	DdosIpPrice *Price `json:"ddosIpPrice,omitempty"`
+}
+
 type ModifyDdosIpAddressesResourceGroupRequest struct {
 	*common.BaseRequest
 	DdosIpIds       []string `json:"ddosIpIds,omitempty"`
@@ -739,6 +896,47 @@ type CreateVpcResponse struct {
 type CreateVpcResponseParams struct {
 	RequestId string `json:"requestId,omitempty"`
 	VpcId     string `json:"vpcId,omitempty"`
+}
+
+type ModifyVpcsAttributeRequest struct {
+	*common.BaseRequest
+	VpcIds  []string `json:"vpcIds,omitempty"`
+	VpcName string   `json:"vpcName,omitempty"`
+}
+
+type ModifyVpcsAttributeResponse struct {
+	*common.BaseResponse
+	RequestId string `json:"requestId,omitempty"`
+	Response  struct {
+		RequestId string `json:"requestId,omitempty"`
+	} `json:"response"`
+}
+
+type ModifyVpcsResourceGroupRequest struct {
+	*common.BaseRequest
+	VpcIds          []string `json:"vpcIds,omitempty"`
+	ResourceGroupId string   `json:"resourceGroupId,omitempty"`
+}
+
+type ModifyVpcsResourceGroupResponse struct {
+	*common.BaseResponse
+	RequestId string `json:"requestId,omitempty"`
+	Response  struct {
+		RequestId string `json:"requestId,omitempty"`
+	} `json:"response"`
+}
+
+type DeleteVpcRequest struct {
+	*common.BaseRequest
+	VpcId string `json:"vpcId,omitempty"`
+}
+
+type DeleteVpcResponse struct {
+	*common.BaseResponse
+	RequestId string `json:"requestId,omitempty"`
+	Response  struct {
+		RequestId string `json:"requestId,omitempty"`
+	} `json:"response,omitempty"`
 }
 
 type DescribeVpcsRequest struct {
@@ -843,17 +1041,17 @@ type DescribeSubnetsResponseParams struct {
 	TotalCount int       `json:"totalCount,omitempty"`
 }
 
+type DeleteSubnetRequest struct {
+	*common.BaseRequest
+	SubnetId string `json:"subnetId,omitempty"`
+}
+
 type DeleteSubnetResponse struct {
 	*common.BaseResponse
 	RequestId string `json:"requestId,omitempty"`
 	Response  struct {
 		RequestId string `json:"requestId,omitempty"`
 	} `json:"response,omitempty"`
-}
-
-type DeleteSubnetRequest struct {
-	*common.BaseRequest
-	SubnetId string `json:"subnetId,omitempty"`
 }
 
 type ModifySubnetsAttributeRequest struct {
@@ -863,6 +1061,20 @@ type ModifySubnetsAttributeRequest struct {
 }
 
 type ModifySubnetsAttributeResponse struct {
+	*common.BaseResponse
+	RequestId string `json:"requestId,omitempty"`
+	Response  struct {
+		RequestId string `json:"requestId,omitempty"`
+	} `json:"response"`
+}
+
+type ModifySubnetsResourceGroupRequest struct {
+	*common.BaseRequest
+	SubnetIds       []string `json:"subnetIds,omitempty"`
+	ResourceGroupId string   `json:"resourceGroupId,omitempty"`
+}
+
+type ModifySubnetsResourceGroupResponse struct {
 	*common.BaseResponse
 	RequestId string `json:"requestId,omitempty"`
 	Response  struct {
