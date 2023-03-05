@@ -101,7 +101,6 @@ func (c *Client) ApiCall(request Request, response Response) (err error) {
 	request.SetContentType("application/json")
 
 	body, err := json.Marshal(request)
-	// todo body
 	if err != nil {
 		return err
 	}

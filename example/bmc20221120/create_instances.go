@@ -9,7 +9,9 @@ import (
 )
 
 func main() {
+	// create custom config
 	config := common.NewConfig()
+	// open debug
 	config.Debug = common.Bool(true)
 	client, _ := bmc.NewClient(config, os.Getenv("ZENLAYERCLOUD_SECRET_KEY_ID"), os.Getenv("ZENLAYERCLOUD_SECRET_KEY_PASSWORD"))
 	request := bmc.NewCreateInstancesRequest()

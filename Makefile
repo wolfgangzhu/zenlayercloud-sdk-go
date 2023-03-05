@@ -1,9 +1,9 @@
 
-VERSION    = `cat VERSION`
+V    = ${VERSION}
 
 
 LDFLAGS    = "\
-    -X 'github.com/zenlayer/zenlayercloud-sdk-go/zenlayercloud/common.version=${VERSION}'"
+    -X 'github.com/zenlayer/zenlayercloud-sdk-go/zenlayercloud/common.version=${V}'"
 
 all:
 
@@ -14,4 +14,3 @@ project:
 	go build -ldflags ${LDFLAGS}
 
 test:
-

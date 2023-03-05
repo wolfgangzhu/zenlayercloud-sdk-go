@@ -13,11 +13,11 @@ type DescribeZonesResponse struct {
 	Response  *DescribeZonesResponseParams `json:"response"`
 }
 type DescribeZonesResponseParams struct {
-	RequestId string   `json:"requestId,omitempty"`
-	ZoneSet   []*Zones `json:"zoneSet,omitempty"`
+	RequestId string      `json:"requestId,omitempty"`
+	ZoneSet   []*ZoneInfo `json:"zoneSet,omitempty"`
 }
 
-type Zones struct {
+type ZoneInfo struct {
 	ZoneId   string `json:"zoneId,omitempty"`
 	ZoneName string `json:"zoneName,omitempty"`
 	CityName string `json:"cityName,omitempty"`
