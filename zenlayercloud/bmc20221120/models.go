@@ -580,7 +580,7 @@ type AllocateEipAddressesResponseParams struct {
 
 type TerminateEipAddressRequest struct {
 	*common.BaseRequest
-	EipId string `json:"EipId,omitempty"`
+	EipId string `json:"eipId,omitempty"`
 }
 
 type TerminateEipAddressResponse struct {
@@ -593,7 +593,7 @@ type TerminateEipAddressResponse struct {
 
 type ReleaseEipAddressesRequest struct {
 	*common.BaseRequest
-	EipIds []string `json:"EipIds,omitempty"`
+	EipIds []string `json:"eipIds,omitempty"`
 }
 
 type ReleaseEipAddressesResponse struct {
@@ -606,7 +606,7 @@ type ReleaseEipAddressesResponse struct {
 
 type RenewEipAddressRequest struct {
 	*common.BaseRequest
-	EipId string `json:"EipId,omitempty"`
+	EipId string `json:"eipId,omitempty"`
 }
 
 type RenewEipAddressResponse struct {
@@ -760,7 +760,7 @@ type DdosIpAddress struct {
 
 type TerminateDdosIpAddressRequest struct {
 	*common.BaseRequest
-	DdosIpId string `json:"DdosIpId,omitempty"`
+	DdosIpId string `json:"ddosIpId,omitempty"`
 }
 
 type TerminateDdosIpAddressResponse struct {
@@ -826,7 +826,7 @@ type UnassociateDdosIpAddressResponse struct {
 type InquiryPriceCreateDdosIpAddressRequest struct {
 	*common.BaseRequest
 	ZoneId              string         `json:"zoneId,omitempty"`
-	DdosIpChargeType    string         `json:"DdosIpChargeType,omitempty"`
+	DdosIpChargeType    string         `json:"ddosIpChargeType,omitempty"`
 	DdosIpChargePrepaid *ChargePrepaid `json:"ddosIpChargePrepaid,omitempty"`
 	Amount              int            `json:"amount,omitempty"`
 }
