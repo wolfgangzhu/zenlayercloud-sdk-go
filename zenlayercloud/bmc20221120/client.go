@@ -806,24 +806,24 @@ func (c *Client) TerminateDdosIpAddress(request *TerminateDdosIpAddressRequest) 
 	return
 }
 
-func NewReleaseDdosIPAddressesRequest() (request *ReleaseDdosIPAddressesRequest) {
-	request = &ReleaseDdosIPAddressesRequest{
+func NewReleaseDdosIpAddressesRequest() (request *ReleaseDdosIpAddressesRequest) {
+	request = &ReleaseDdosIpAddressesRequest{
 		BaseRequest: &common.BaseRequest{},
 	}
-	request.Init().InitWithApiInfo(SERVICE, APIVersion, "ReleaseDdosIPAddresses")
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "ReleaseDdosIpAddresses")
 
 	return
 }
 
-func NewReleaseDdosIPAddressesResponse() (response *ReleaseDdosIPAddressesResponse) {
-	response = &ReleaseDdosIPAddressesResponse{
+func NewReleaseDdosIpAddressesResponse() (response *ReleaseDdosIpAddressesResponse) {
+	response = &ReleaseDdosIpAddressesResponse{
 		BaseResponse: &common.BaseResponse{},
 	}
 	return
 }
 
-func (c *Client) ReleaseDdosIPAddresses(request *ReleaseDdosIPAddressesRequest) (response *ReleaseDdosIPAddressesResponse, err error) {
-	response = NewReleaseDdosIPAddressesResponse()
+func (c *Client) ReleaseDdosIpAddresses(request *ReleaseDdosIpAddressesRequest) (response *ReleaseDdosIpAddressesResponse, err error) {
+	response = NewReleaseDdosIpAddressesResponse()
 	err = c.ApiCall(request, response)
 	return
 }

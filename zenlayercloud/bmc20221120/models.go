@@ -771,12 +771,12 @@ type TerminateDdosIpAddressResponse struct {
 	} `json:"response"`
 }
 
-type ReleaseDdosIPAddressesRequest struct {
+type ReleaseDdosIpAddressesRequest struct {
 	*common.BaseRequest
 	DdosIpIds []string `json:"ddosIpIds,omitempty"`
 }
 
-type ReleaseDdosIPAddressesResponse struct {
+type ReleaseDdosIpAddressesResponse struct {
 	*common.BaseResponse
 	RequestId string `json:"requestId,omitempty"`
 	Response  struct {
