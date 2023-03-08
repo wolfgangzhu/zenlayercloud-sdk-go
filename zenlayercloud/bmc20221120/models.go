@@ -561,7 +561,7 @@ type EipAvailableResource struct {
 type AllocateEipAddressesRequest struct {
 	*common.BaseRequest
 	EipChargeType    string         `json:"eipChargeType,omitempty"`
-	EipChargePrepaid *ChargePrepaid `json:"instanceChargePrepaid,omitempty"`
+	EipChargePrepaid *ChargePrepaid `json:"eipChargePrepaid,omitempty"`
 	ZoneId           string         `json:"zoneId,omitempty"`
 	ResourceGroupId  string         `json:"resourceGroupId,omitempty"`
 	Amount           int            `json:"amount,omitempty"`
