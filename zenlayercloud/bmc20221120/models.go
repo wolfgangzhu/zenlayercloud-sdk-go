@@ -1085,8 +1085,8 @@ type ModifySubnetsResourceGroupResponse struct {
 
 type UnAssociateSubnetInstanceRequest struct {
 	*common.BaseRequest
-	SubnetId    string   `json:"subnetId,omitempty"`
-	InstanceIds []string `json:"instanceIds,omitempty"`
+	SubnetId   string `json:"subnetId,omitempty"`
+	InstanceId string `json:"instanceId,omitempty"`
 }
 
 type UnAssociateSubnetInstanceResponse struct {
@@ -1099,8 +1099,8 @@ type UnAssociateSubnetInstanceResponse struct {
 
 type AssociateSubnetInstancesRequest struct {
 	*common.BaseRequest
-	SubnetId  string                              `json:"subnetId,omitempty"`
-	Instances []*AssociateSubnetInstanceIpAddress `json:"instances,omitempty"`
+	SubnetId           string                              `json:"subnetId,omitempty"`
+	SubnetInstanceList []*AssociateSubnetInstanceIpAddress `json:"subnetInstanceList,omitempty"`
 }
 
 type AssociateSubnetInstanceIpAddress struct {
