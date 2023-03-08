@@ -786,7 +786,7 @@ type ReleaseDdosIPAddressesResponse struct {
 
 type RenewDdosIpAddressRequest struct {
 	*common.BaseRequest
-	DdosIp string `json:"ddosIp,omitempty"`
+	DdosIpId string `json:"ddosIpId,omitempty"`
 }
 
 type RenewDdosIpAddressResponse struct {
@@ -812,7 +812,7 @@ type AssociateDdosIpAddressResponse struct {
 
 type UnassociateDdosIpAddressRequest struct {
 	*common.BaseRequest
-	DdosIp string `json:"ddosIp,omitempty"`
+	DdosIp string `json:"ddosIpId,omitempty"`
 }
 
 type UnassociateDdosIpAddressResponse struct {
