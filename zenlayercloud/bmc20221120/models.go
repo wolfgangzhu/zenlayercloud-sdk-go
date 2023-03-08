@@ -1007,8 +1007,7 @@ type Subnet struct {
 	ResourceGroupId   string                     `json:"resourceGroupId,omitempty"`
 	ResourceGroupName string                     `json:"resourceGroupName,omitempty"`
 	SubnetStatus      string                     `json:"subnetStatus,omitempty"`
-	TotalIpCount      int                        `json:"totalIpCount,omitempty"`
-	InstanceSet       []*SubnetAssociateInstance `json:"instanceSet,omitempty"`
+	SubnetInstanceSet []*SubnetAssociateInstance `json:"subnetInstanceSet,omitempty"`
 }
 
 type SubnetAssociateInstance struct {
