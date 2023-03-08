@@ -12,6 +12,7 @@ type DescribeZonesResponse struct {
 	RequestId string                       `json:"requestId,omitempty"`
 	Response  *DescribeZonesResponseParams `json:"response"`
 }
+
 type DescribeZonesResponseParams struct {
 	RequestId string      `json:"requestId,omitempty"`
 	ZoneSet   []*ZoneInfo `json:"zoneSet,omitempty"`
@@ -336,7 +337,7 @@ type ReleaseInstancesResponse struct {
 
 type RenewInstanceRequest struct {
 	*common.BaseRequest
-	InstanceId string `json:"instanceIds,omitempty"`
+	InstanceId string `json:"instanceId,omitempty"`
 }
 
 type RenewInstanceResponse struct {

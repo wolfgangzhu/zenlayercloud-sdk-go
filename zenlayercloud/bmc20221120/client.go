@@ -322,7 +322,7 @@ func NewModifyInstancesAttributeRequest() (request *ModifyInstancesAttributeRequ
 	request = &ModifyInstancesAttributeRequest{
 		BaseRequest: &common.BaseRequest{},
 	}
-	request.Init().InitWithApiInfo(SERVICE, APIVersion, "ModifyInstanceAttribute")
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "ModifyInstancesAttribute")
 
 	return
 }
@@ -476,7 +476,7 @@ func NewCancelInstanceTrafficPackageDowngradeRequest() (request *CancelInstanceT
 	request = &CancelInstanceTrafficPackageDowngradeRequest{
 		BaseRequest: &common.BaseRequest{},
 	}
-	request.Init().InitWithApiInfo(SERVICE, APIVersion, "CancelInstanceBandwidthDowngrade")
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "CancelInstanceTrafficPackageDowngrade")
 
 	return
 }
