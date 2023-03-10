@@ -1013,7 +1013,7 @@ type Subnet struct {
 type SubnetAssociateInstance struct {
 	InstanceId       string `json:"instanceId,omitempty"`
 	PrivateIpAddress string `json:"privateIpAddress,omitempty"`
-	AssociateStatus  string `json:"associateStatus,omitempty"`
+	PrivateIpStatus  string `json:"privateIpStatus,omitempty"`
 }
 
 type DescribeSubnetsRequest struct {
