@@ -812,7 +812,7 @@ type AssociateDdosIpAddressResponse struct {
 
 type UnassociateDdosIpAddressRequest struct {
 	*common.BaseRequest
-	DdosIp string `json:"ddosIpId,omitempty"`
+	DdosIpId string `json:"ddosIpId,omitempty"`
 }
 
 type UnassociateDdosIpAddressResponse struct {
