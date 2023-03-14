@@ -428,6 +428,28 @@ func (c *Client) ModifyInstanceBandwidth(request *ModifyInstanceBandwidthRequest
 	return
 }
 
+func NewInquiryPriceInstanceBandwidthRequest() (request *InquiryPriceInstanceBandwidthRequest) {
+	request = &InquiryPriceInstanceBandwidthRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "InquiryPriceInstanceBandwidth")
+
+	return
+}
+
+func NewInquiryPriceInstanceBandwidthResponse() (response *InquiryPriceInstanceBandwidthResponse) {
+	response = &InquiryPriceInstanceBandwidthResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) InquiryPriceInstanceBandwidth(request *InquiryPriceInstanceBandwidthRequest) (response *InquiryPriceInstanceBandwidthResponse, err error) {
+	response = NewInquiryPriceInstanceBandwidthResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
 func NewCancelInstanceBandwidthDowngradeRequest() (request *CancelInstanceBandwidthDowngradeRequest) {
 	request = &CancelInstanceBandwidthDowngradeRequest{
 		BaseRequest: &common.BaseRequest{},
@@ -468,6 +490,28 @@ func NewModifyInstanceTrafficPackageResponse() (response *ModifyInstanceTrafficP
 
 func (c *Client) ModifyInstanceTrafficPackage(request *ModifyInstanceTrafficPackageRequest) (response *ModifyInstanceTrafficPackageResponse, err error) {
 	response = NewModifyInstanceTrafficPackageResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
+func NewInquiryPriceInstanceTrafficPackageRequest() (request *InquiryPriceInstanceTrafficPackageRequest) {
+	request = &InquiryPriceInstanceTrafficPackageRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "InquiryPriceInstanceTrafficPackage")
+
+	return
+}
+
+func NewInquiryPriceInstanceTrafficPackageResponse() (response *InquiryPriceInstanceTrafficPackageResponse) {
+	response = &InquiryPriceInstanceTrafficPackageResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) InquiryPriceInstanceTrafficPackage(request *InquiryPriceInstanceTrafficPackageRequest) (response *InquiryPriceInstanceTrafficPackageResponse, err error) {
+	response = NewInquiryPriceInstanceTrafficPackageResponse()
 	err = c.ApiCall(request, response)
 	return
 }
@@ -558,6 +602,28 @@ func NewDescribeEipAvailableResourcesResponse() (response *DescribeEipAvailableR
 
 func (c *Client) DescribeEipAvailableResources(request *DescribeEipAvailableResourcesRequest) (response *DescribeEipAvailableResourcesResponse, err error) {
 	response = NewDescribeEipAvailableResourcesResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
+func NewDescribeInstanceAvailableEipResourcesRequest() (request *DescribeInstanceAvailableEipResourcesRequest) {
+	request = &DescribeInstanceAvailableEipResourcesRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "DescribeInstanceAvailableEipResources")
+
+	return
+}
+
+func NewDescribeInstanceAvailableEipResourcesResponse() (response *DescribeInstanceAvailableEipResourcesResponse) {
+	response = &DescribeInstanceAvailableEipResourcesResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) DescribeInstanceAvailableEipResources(request *DescribeInstanceAvailableEipResourcesRequest) (response *DescribeInstanceAvailableEipResourcesResponse, err error) {
+	response = NewDescribeInstanceAvailableEipResourcesResponse()
 	err = c.ApiCall(request, response)
 	return
 }
@@ -736,6 +802,28 @@ func NewDescribeDdosAvailableResourcesResponse() (response *DescribeDdosIpAvaila
 
 func (c *Client) DescribeDdosAvailableResources(request *DescribeDdosIpAvailableResourcesRequest) (response *DescribeDdosIpAvailableResourcesResponse, err error) {
 	response = NewDescribeDdosAvailableResourcesResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
+func NewDescribeInstanceAvailableDdosResourcesRequest() (request *DescribeInstanceAvailableDdosResourcesRequest) {
+	request = &DescribeInstanceAvailableDdosResourcesRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "DescribeInstanceAvailableDdosIpResources")
+
+	return
+}
+
+func NewDescribeInstanceAvailableDdosResourcesResponse() (response *DescribeInstanceAvailableDdosResourcesResponse) {
+	response = &DescribeInstanceAvailableDdosResourcesResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) DescribeInstanceAvailableDdosResources(request *DescribeInstanceAvailableDdosResourcesRequest) (response *DescribeInstanceAvailableDdosResourcesResponse, err error) {
+	response = NewDescribeInstanceAvailableDdosResourcesResponse()
 	err = c.ApiCall(request, response)
 	return
 }
@@ -1222,6 +1310,50 @@ func NewAssociateSubnetInstancesResponse() (response *AssociateSubnetInstancesRe
 
 func (c *Client) AssociateSubnetInstances(request *AssociateSubnetInstancesRequest) (response *AssociateSubnetInstancesResponse, err error) {
 	response = NewAssociateSubnetInstancesResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
+func NewAssociateVpcSubnetRequest() (request *AssociateVpcSubnetRequest) {
+	request = &AssociateVpcSubnetRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "AssociateVpcSubnet")
+
+	return
+}
+
+func NewAssociateVpcSubnetResponse() (response *AssociateVpcSubnetResponse) {
+	response = &AssociateVpcSubnetResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) AssociateVpcSubnet(request *AssociateVpcSubnetRequest) (response *AssociateVpcSubnetResponse, err error) {
+	response = NewAssociateVpcSubnetResponse()
+	err = c.ApiCall(request, response)
+	return
+}
+
+func NewDescribeSubnetAvailableResourcesRequest() (request *DescribeSubnetAvailableResourcesRequest) {
+	request = &DescribeSubnetAvailableResourcesRequest{
+		BaseRequest: &common.BaseRequest{},
+	}
+	request.Init().InitWithApiInfo(SERVICE, APIVersion, "DescribeSubnetAvailableResources")
+
+	return
+}
+
+func NewDescribeSubnetAvailableResourcesResponse() (response *DescribeSubnetAvailableResourcesResponse) {
+	response = &DescribeSubnetAvailableResourcesResponse{
+		BaseResponse: &common.BaseResponse{},
+	}
+	return
+}
+
+func (c *Client) DescribeSubnetAvailableResources(request *DescribeSubnetAvailableResourcesRequest) (response *DescribeSubnetAvailableResourcesResponse, err error) {
+	response = NewDescribeSubnetAvailableResourcesResponse()
 	err = c.ApiCall(request, response)
 	return
 }
