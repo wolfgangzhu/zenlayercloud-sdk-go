@@ -1243,7 +1243,7 @@ func NewDescribeCidrBlocksResponse() (response *DescribeCidrBlocksResponse) {
 	return
 }
 
-func (c *Client) DescribeCidrBlocksRequest(request *DescribeCidrBlocksRequest) (response *DescribeCidrBlocksResponse, err error) {
+func (c *Client) DescribeCidrBlocks(request *DescribeCidrBlocksRequest) (response *DescribeCidrBlocksResponse, err error) {
 	response = NewDescribeCidrBlocksResponse()
 	err = c.ApiCall(request, response)
 	return
@@ -1264,7 +1264,7 @@ func NewDescribeCidrBlockIpsResponse() (response *DescribeCidrBlockIpsResponse) 
 	return
 }
 
-func (c *Client) DescribeCidrBlockIpsRequest(request *DescribeCidrBlockIpsRequest) (response *DescribeCidrBlockIpsResponse, err error) {
+func (c *Client) DescribeCidrBlockIps(request *DescribeCidrBlockIpsRequest) (response *DescribeCidrBlockIpsResponse, err error) {
 	response = NewDescribeCidrBlockIpsResponse()
 	err = c.ApiCall(request, response)
 	return
@@ -1285,7 +1285,7 @@ func NewDescribeAvailableIpv4ResourcesResponse() (response *DescribeAvailableIpv
 	return
 }
 
-func (c *Client) DescribeAvailableIpv4ResourcesRequest(request *DescribeAvailableIpv4ResourcesRequest) (response *DescribeAvailableIpv4ResourcesResponse, err error) {
+func (c *Client) DescribeAvailableIpv4Resources(request *DescribeAvailableIpv4ResourcesRequest) (response *DescribeAvailableIpv4ResourcesResponse, err error) {
 	response = NewDescribeAvailableIpv4ResourcesResponse()
 	err = c.ApiCall(request, response)
 	return
@@ -1306,7 +1306,7 @@ func NewDescribeAvailableIpv6ResourcesResponse() (response *DescribeAvailableIpv
 	return
 }
 
-func (c *Client) DescribeAvailableIpv6ResourcesRequest(request *DescribeAvailableIpv6ResourcesRequest) (response *DescribeAvailableIpv6ResourcesResponse, err error) {
+func (c *Client) DescribeAvailableIpv6Resources(request *DescribeAvailableIpv6ResourcesRequest) (response *DescribeAvailableIpv6ResourcesResponse, err error) {
 	response = NewDescribeAvailableIpv6ResourcesResponse()
 	err = c.ApiCall(request, response)
 	return
@@ -1327,7 +1327,7 @@ func NewDescribeInstanceAvailableCidrBlockResponse() (response *DescribeInstance
 	return
 }
 
-func (c *Client) DescribeInstanceAvailableCidrBlockRequest(request *DescribeInstanceAvailableCidrBlockRequest) (response *DescribeInstanceAvailableCidrBlockResponse, err error) {
+func (c *Client) DescribeInstanceAvailableCidrBlock(request *DescribeInstanceAvailableCidrBlockRequest) (response *DescribeInstanceAvailableCidrBlockResponse, err error) {
 	response = NewDescribeInstanceAvailableCidrBlockResponse()
 	err = c.ApiCall(request, response)
 	return
@@ -1348,7 +1348,7 @@ func NewInquiryPriceCreateIpv4BlockResponse() (response *InquiryPriceCreateIpv4B
 	return
 }
 
-func (c *Client) InquiryPriceCreateIpv4BlockRequest(request *InquiryPriceCreateIpv4BlockRequest) (response *InquiryPriceCreateIpv4BlockResponse, err error) {
+func (c *Client) InquiryPriceCreateIpv4Block(request *InquiryPriceCreateIpv4BlockRequest) (response *InquiryPriceCreateIpv4BlockResponse, err error) {
 	response = NewInquiryPriceCreateIpv4BlockResponse()
 	err = c.ApiCall(request, response)
 	return
@@ -1369,7 +1369,7 @@ func NewCreateIpv4BlockResponse() (response *CreateIpv4BlockResponse) {
 	return
 }
 
-func (c *Client) CreateIpv4BlockRequest(request *CreateIpv4BlockRequest) (response *CreateIpv4BlockResponse, err error) {
+func (c *Client) CreateIpv4Block(request *CreateIpv4BlockRequest) (response *CreateIpv4BlockResponse, err error) {
 	response = NewCreateIpv4BlockResponse()
 	err = c.ApiCall(request, response)
 	return
@@ -1390,7 +1390,7 @@ func NewCreateIpv6BlockResponse() (response *CreateIpv6BlockResponse) {
 	return
 }
 
-func (c *Client) CreateIpv6BlockRequest(request *CreateIpv6BlockRequest) (response *CreateIpv6BlockResponse, err error) {
+func (c *Client) CreateIpv6Block(request *CreateIpv6BlockRequest) (response *CreateIpv6BlockResponse, err error) {
 	response = NewCreateIpv6BlockResponse()
 	err = c.ApiCall(request, response)
 	return
@@ -1411,7 +1411,7 @@ func NewModifyCidrBlocksAttributeResponse() (response *ModifyCidrBlocksAttribute
 	return
 }
 
-func (c *Client) ModifyCidrBlocksAttributeRequest(request *ModifyCidrBlocksAttributeRequest) (response *ModifyCidrBlocksAttributeResponse, err error) {
+func (c *Client) ModifyCidrBlocksAttribute(request *ModifyCidrBlocksAttributeRequest) (response *ModifyCidrBlocksAttributeResponse, err error) {
 	response = NewModifyCidrBlocksAttributeResponse()
 	err = c.ApiCall(request, response)
 	return
@@ -1432,7 +1432,7 @@ func NewRenewCidrBlockResponse() (response *RenewCidrBlockResponse) {
 	return
 }
 
-func (c *Client) RenewCidrBlockRequest(request *RenewCidrBlockRequest) (response *RenewCidrBlockResponse, err error) {
+func (c *Client) RenewCidrBlock(request *RenewCidrBlockRequest) (response *RenewCidrBlockResponse, err error) {
 	response = NewRenewCidrBlockResponse()
 	err = c.ApiCall(request, response)
 	return
@@ -1453,7 +1453,7 @@ func NewTerminateCidrBlockResponse() (response *TerminateCidrBlockResponse) {
 	return
 }
 
-func (c *Client) TerminateCidrBlockRequest(request *TerminateCidrBlockRequest) (response *TerminateCidrBlockResponse, err error) {
+func (c *Client) TerminateCidrBlock(request *TerminateCidrBlockRequest) (response *TerminateCidrBlockResponse, err error) {
 	response = NewTerminateCidrBlockResponse()
 	err = c.ApiCall(request, response)
 	return
@@ -1474,7 +1474,7 @@ func NewReleaseCidrBlocksResponse() (response *ReleaseCidrBlocksResponse) {
 	return
 }
 
-func (c *Client) ReleaseCidrBlocksRequest(request *ReleaseCidrBlocksRequest) (response *ReleaseCidrBlocksResponse, err error) {
+func (c *Client) ReleaseCidrBlocks(request *ReleaseCidrBlocksRequest) (response *ReleaseCidrBlocksResponse, err error) {
 	response = NewReleaseCidrBlocksResponse()
 	err = c.ApiCall(request, response)
 	return
@@ -1495,7 +1495,7 @@ func NewBindCidrBlockIpsResponse() (response *BindCidrBlockIpsResponse) {
 	return
 }
 
-func (c *Client) BindCidrBlockIpsRequest(request *BindCidrBlockIpsRequest) (response *BindCidrBlockIpsResponse, err error) {
+func (c *Client) BindCidrBlockIps(request *BindCidrBlockIpsRequest) (response *BindCidrBlockIpsResponse, err error) {
 	response = NewBindCidrBlockIpsResponse()
 	err = c.ApiCall(request, response)
 	return
@@ -1516,7 +1516,7 @@ func NewUnbindCidrBlockIpsResponse() (response *UnbindCidrBlockIpsResponse) {
 	return
 }
 
-func (c *Client) UnbindCidrBlockIpsRequest(request *UnbindCidrBlockIpsRequest) (response *UnbindCidrBlockIpsResponse, err error) {
+func (c *Client) UnbindCidrBlockIps(request *UnbindCidrBlockIpsRequest) (response *UnbindCidrBlockIpsResponse, err error) {
 	response = NewUnbindCidrBlockIpsResponse()
 	err = c.ApiCall(request, response)
 	return
