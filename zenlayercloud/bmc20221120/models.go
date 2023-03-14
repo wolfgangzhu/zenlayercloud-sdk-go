@@ -439,6 +439,21 @@ type StepPrice struct {
 	DiscountUnitPrice *float64 `json:"discountUnitPrice,omitempty"`
 }
 
+type InquiryPriceInstanceBandwidthRequest struct {
+	*common.BaseRequest
+	InstanceId       string `json:"instanceId,omitempty"`
+	BandwidthOutMbps int    `json:"bandwidthOutMbps,omitempty"`
+}
+type InquiryPriceInstanceBandwidthResponse struct {
+	*common.BaseResponse
+	RequestId string                                       `json:"requestId,omitempty"`
+	Response  *InquiryPriceInstanceBandwidthResponseParams `json:"response"`
+}
+type InquiryPriceInstanceBandwidthResponseParams struct {
+	RequestId      string   `json:"requestId,omitempty"`
+	BandwidthPrice []*Price `json:"bandwidthPrice,omitempty"`
+}
+
 type ModifyInstanceBandwidthRequest struct {
 	*common.BaseRequest
 	InstanceId       string `json:"instanceId,omitempty"`
@@ -484,6 +499,21 @@ type ModifyInstanceTrafficPackageResponse struct {
 	*common.BaseResponse
 	RequestId string                                          `json:"requestId,omitempty"`
 	Response  *ModifyInstanceTrafficPackageSizeResponseParams `json:"response"`
+}
+
+type InquiryPriceInstanceTrafficPackageRequest struct {
+	*common.BaseRequest
+	InstanceId         string  `json:"instanceId,omitempty"`
+	TrafficPackageSize float64 `json:"trafficPackageSize,omitempty"`
+}
+type InquiryPriceInstanceTrafficPackageResponse struct {
+	*common.BaseResponse
+	RequestId string                                            `json:"requestId,omitempty"`
+	Response  *InquiryPriceInstanceTrafficPackageResponseParams `json:"response"`
+}
+type InquiryPriceInstanceTrafficPackageResponseParams struct {
+	RequestId           string   `json:"requestId,omitempty"`
+	TrafficPackagePrice []*Price `json:"trafficPackagePrice,omitempty"`
 }
 
 type CancelInstanceTrafficPackageDowngradeRequest struct {
@@ -552,10 +582,27 @@ type DescribeEipAvailableResourcesResponseParams struct {
 	RequestId    string                  `json:"requestId,omitempty"`
 	EipResources []*EipAvailableResource `json:"eipResources,omitempty"`
 }
-
 type EipAvailableResource struct {
 	ZoneId string `json:"zoneId,omitempty"`
 	Status string `json:"status,omitempty"`
+}
+
+type DescribeInstanceAvailableEipResourcesRequest struct {
+	*common.BaseRequest
+	InstanceId string `json:"instanceId,omitempty"`
+}
+type DescribeInstanceAvailableEipResourcesResponse struct {
+	*common.BaseResponse
+	RequestId string                                               `json:"requestId,omitempty"`
+	Response  *DescribeInstanceAvailableEipResourcesResponseParams `json:"response,omitempty"`
+}
+type DescribeInstanceAvailableEipResourcesResponseParams struct {
+	RequestId            string                          `json:"requestId,omitempty"`
+	InstanceEipResources []*InstanceAvailableEipResource `json:"instanceEipResources,omitempty"`
+}
+type InstanceAvailableEipResource struct {
+	EipId     string `json:"eipId,omitempty"`
+	IpAddress string `json:"ipAddress,omitempty"`
 }
 
 type AllocateEipAddressesRequest struct {
@@ -695,6 +742,24 @@ type DescribeDdosIpAvailableResourcesResponseParams struct {
 type DdosIpAvailableResource struct {
 	ZoneId string `json:"zoneId,omitempty"`
 	Status string `json:"status,omitempty"`
+}
+
+type DescribeInstanceAvailableDdosResourcesRequest struct {
+	*common.BaseRequest
+	InstanceId string `json:"instanceId,omitempty"`
+}
+type DescribeInstanceAvailableDdosResourcesResponse struct {
+	*common.BaseResponse
+	RequestId string                                                `json:"requestId,omitempty"`
+	Response  *DescribeInstanceAvailableDdosResourcesResponseParams `json:"response,omitempty"`
+}
+type DescribeInstanceAvailableDdosResourcesResponseParams struct {
+	RequestId               string                             `json:"requestId,omitempty"`
+	InstanceDdosIpResources []*InstanceAvailableDdosIpResource `json:"instanceDdosIpResources,omitempty"`
+}
+type InstanceAvailableDdosIpResource struct {
+	DdosIpId  string `json:"ddosIpId,omitempty"`
+	IpAddress string `json:"ipAddress,omitempty"`
 }
 
 type AllocateDdosIpAddressesRequest struct {
@@ -1111,6 +1176,35 @@ type AssociateSubnetInstancesResponse struct {
 	Response  struct {
 		RequestId string `json:"requestId,omitempty"`
 	} `json:"response"`
+}
+
+type AssociateVpcSubnetRequest struct {
+	*common.BaseRequest
+	SubnetId string `json:"subnetId,omitempty"`
+	VpcId    string `json:"vpcId,omitempty"`
+}
+
+type AssociateVpcSubnetResponse struct {
+	*common.BaseResponse
+	RequestId string `json:"requestId,omitempty"`
+	Response  struct {
+		RequestId string `json:"requestId,omitempty"`
+	} `json:"response"`
+}
+
+type DescribeSubnetAvailableResourcesRequest struct {
+	*common.BaseRequest
+	ZoneId string `json:"zoneId,omitempty"`
+}
+
+type DescribeSubnetAvailableResourcesResponse struct {
+	*common.BaseResponse
+	RequestId string                                          `json:"requestId,omitempty"`
+	Response  *DescribeSubnetAvailableResourcesResponseParams `json:"response,omitempty"`
+}
+type DescribeSubnetAvailableResourcesResponseParams struct {
+	RequestId string   `json:"requestId,omitempty"`
+	ZoneIdSet []string `json:"zoneIdSet,omitempty"`
 }
 
 type DescribeCidrBlocksRequest struct {
