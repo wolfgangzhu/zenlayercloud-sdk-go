@@ -1282,7 +1282,7 @@ type CreateIpv4BlockRequest struct {
 	ChargePrepaid   *ChargePrepaid `json:"chargePrepaid,omitempty"`
 	Netmask         int            `json:"netmask,omitempty"`
 	Amount          *int           `json:"amount,omitempty"`
-	ResourceGroupId *string        `json:"resourceGroupId,omitempty"`
+	ResourceGroupId string         `json:"resourceGroupId,omitempty"`
 }
 
 type CreateIpv4BlockResponse struct {
@@ -1299,10 +1299,10 @@ type CreateIpv4BlockResponseParam struct {
 
 type CreateIpv6BlockRequest struct {
 	*common.BaseRequest
-	ZoneId          string  `json:"zoneId,omitempty"`
-	Name            string  `json:"name,omitempty"`
-	Amount          *int    `json:"amount,omitempty"`
-	ResourceGroupId *string `json:"resourceGroupId,omitempty"`
+	ZoneId          string `json:"zoneId,omitempty"`
+	Name            string `json:"name,omitempty"`
+	Amount          *int   `json:"amount,omitempty"`
+	ResourceGroupId string `json:"resourceGroupId,omitempty"`
 }
 
 type CreateIpv6BlockResponse struct {
